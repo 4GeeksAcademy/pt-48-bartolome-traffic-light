@@ -19,7 +19,6 @@ const Home = () => {
 		aux1 = int
 		
 	}
-	// Para que alterne colores.
 	useEffect(() => {
 		if (active == true && color == '') {
 			setColor('green')
@@ -30,7 +29,6 @@ const Home = () => {
 		}
 	})
 
-	// Para añadir/quitar el color morado
 	let mor = <div className={`light purple ${color == 'purple' ? 'glow-purple' : ''}`} onClick={() => setColor('purple')}></div>
 	useEffect(() => {
 		if (purple){
@@ -39,7 +37,6 @@ const Home = () => {
 		else if (aux[3] == 'purple') {
 			aux.pop()
 		}
-		// Adaptar el intervalo
 		if (purple && active && stop == 0){
 			clearInterval(aux1)
 			int()
@@ -56,7 +53,6 @@ const Home = () => {
 		<div className="contenedor">
 			<div className='traffic-light'>
 				<button type="button" className="btn btn-secondary" onClick={purple == false ? () => setPurple(true) : () => setPurple(false)}>
-					{/* Texto del botón morado */}
 					{purple == false ? 'Add Purple' : 'Rem Purple'}</button>
 				<div className={`light red ${color == 'red' ? 'glow-red' : ''}`}   onClick={() => setColor('red')}></div>
 				<div className={`light yellow ${color == 'yellow' ? 'glow-yellow' : ''}`} onClick={() => setColor('yellow')}></div>
